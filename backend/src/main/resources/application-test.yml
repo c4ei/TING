@@ -1,0 +1,79 @@
+server:
+  port: 8080
+  ssl:
+    key-store: /path/to/keystore.jks
+    key-store-type: JKS
+    key-store-password: your_keystore_password
+
+spring:
+  jackson:
+    time-zone: Asia/Seoul
+
+  datasource:
+    driver-class-name: { DB_DRIVER_CLASS_NAME }
+    url: { DB_URL }
+    username: { DB_USERNAME }
+    password: { DB_PASSWORD }
+
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: update
+
+  mail:
+    host: smtp.mailserver.com
+    port: 587
+    username: your_mail_username
+    password: your_mail_password
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: your_mongo_database
+      authentication-database: admin
+      auto-index-creation: true
+      username: your_mongo_username
+      password: your_mongo_password
+
+jwt:
+  secretKey: your_jwt_secret_key
+
+openvidu:
+  url: https://your.openvidu.url
+  secret: your_openvidu_secret
+
+ncloud:
+  sens:
+    serviceId: your_sens_service_id
+    accessKeyId: your_access_key_id
+    secretKey: your_secret_key
+    senderPhone: your_sender_phone
+
+file:
+  path: /app/profile
+  fishSkinPath: /skin/fish
+
+cloud:
+  gcp:
+    credentials:
+      location: /path/to/your/gcp/credentials.json
+
+payment:
+  kakaopay:
+    admin:
+      key: your_kakao_admin_key
+    cid: your_kakao_cid
+    url:
+      ready: https://kapi.kakao.com/v1/payment/ready
+      approve: https://kapi.kakao.com/v1/payment/approve
+    redirectUrl:
+      approvalRedirectUrl: https://your.app/approval
+      cancelRedirectUrl: https://your.app/cancel
+      failRedirectUrl: https://your.app/fail
